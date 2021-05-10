@@ -1,4 +1,3 @@
-"use strict";
 const refs = {
   days: document.querySelector('[data-value="days"]'),
   hours: document.querySelector('[data-value="hours"]'),

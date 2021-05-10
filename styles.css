@@ -1,0 +1,59 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  text-align: center;
+  background: rgb(245, 226, 6);
+  background: linear-gradient(
+    0deg,
+    rgba(245, 226, 6, 1) 50%,
+    rgba(45, 74, 253, 1) 50%
+  );
+}
+h1 {
+  padding-top: 100px;
+  margin-bottom: 200px;
+  color: yellow;
+  font-family: "Balsamiq Sans", cursive;
+  font-size: 50px;
+}
+
+.timer {
+  font-size: 0;
+  text-align: center;
+}
+.field {
+  display: inline-block;
+  vertical-align: top;
+}
+.field > span {
+  display: inline-block;
+  vertical-align: top;
+  font-family: "Balsamiq Sans", cursive;
+  font-size: 70px;
+  background: #4dadf7;
+  color: #ffffff;
+  line-height: 120px;
+  width: 100px;
+  margin: 0 1px;
+  border-radius: 10px;
+}
+.field > span.label {
+  display: block;
+  background: none;
+  color: inherit;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 30px;
+  width: auto;
+  margin: 0;
+}
+.timer_delimetr {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 100px;
+  line-height: 110px;
+  margin: 0 5px;
+}

@@ -1,11 +1,3 @@
-// const refs = {
-//   days: document.querySelector('[data-value="days"]'),
-//   hours: document.querySelector('[data-value="hours"]'),
-//   mins: document.querySelector('[data-value="mins"]'),
-//   secs: document.querySelector('[data-value="secs"]'),
-//   timer: document.getElementById("timer-1"),
-// };
-
 class CountdownTimer {
   constructor({ selector, targetDate }) {
     this.selector = selector;
@@ -33,7 +25,6 @@ class CountdownTimer {
 
     this.changeTimer({ days, hours, mins, secs });
   }
-
 
   changeTimer({days, hours, mins, secs}) {
     this.days.textContent = `${days}`;

@@ -1,15 +1,21 @@
-const refs = {
-  days: document.querySelector('[data-value="days"]'),
-  hours: document.querySelector('[data-value="hours"]'),
-  mins: document.querySelector('[data-value="mins"]'),
-  secs: document.querySelector('[data-value="secs"]'),
-  timer: document.getElementById("timer-1"),
-};
+// const refs = {
+//   days: document.querySelector('[data-value="days"]'),
+//   hours: document.querySelector('[data-value="hours"]'),
+//   mins: document.querySelector('[data-value="mins"]'),
+//   secs: document.querySelector('[data-value="secs"]'),
+//   timer: document.getElementById("timer-1"),
+// };
 
 class CountdownTimer {
   constructor({ selector, targetDate }) {
     this.selector = selector;
     this.targetDate = targetDate;
+
+    this.days = document.querySelector(`${selector} .value[data-value="days"]`);
+    this.hours = document.querySelector(`${selector} .value[data-value="hours"]`);
+    this.mins = document.querySelector(`${selector} .value[data-value="mins"]`);
+    this.secs = document.querySelector(`${selector} .value[data-value="secs"]`);
+    this.timer = document.getElementById("timer-1");
   }
 
   setInt = setInterval(() => {
@@ -25,8 +31,16 @@ class CountdownTimer {
     const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
     const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
 
-    changeTimer({ days, hours, mins, secs });
+    this.changeTimer({ days, hours, mins, secs });
   }
+
+
+  changeTimer({days, hours, mins, secs}) {
+    this.days.textContent = `${days}`;
+    this.hours.textContent = `${hours}`;
+    this.mins.textContent = `${mins}`;
+    this.secs.textContent = `${secs}`;
+  };
 
   pad(value) {
     return String(value).padStart(2, "0");
@@ -40,14 +54,9 @@ class CountdownTimer {
   }
 };
 
-new CountdownTimer({
+//firstTimer
+const timer1 = new CountdownTimer({
   selector: "#timer-1",
   targetDate: new Date("June 28, 2021"),
 });
 
-function changeTimer({days, hours, mins, secs}) {
-  refs.days.textContent = `${days}`;
-  refs.hours.textContent = `${hours}`;
-  refs.mins.textContent = `${mins}`;
-  refs.secs.textContent = `${secs}`;
-};
